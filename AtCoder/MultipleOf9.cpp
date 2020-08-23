@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -9,37 +10,33 @@ using namespace std;
 #define FOI2(i,a,n) for(int i=a; i<n; i++)
 #define pii pair<int, int>
 #define ppii pair<int, pii>
-#deine vpii vector<pii>
+#define vp vector<pii>
 #define MOD (1e9+7)
 
 const int N = 1e5+5;
-int n, m;
-vpii edges(N);
-int fact[N];
+int n;
+vi A(N);
 int i, j, k, l;
 
-void solve() {
-    cin >> n;
-    FOR(i, n-1)
-        cin >> edges[i].first >> edges[i].second;
-
-    cin >> m;
-    FOI(i, m)
-        cin >> fact[i];
-
-
-
-}
+// void solve() {
+// }
 
 signed main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int t;
-    cin >> t;
-    while(t--) {
-        solve();
+    cin >> n;
+    int stool = 0;
+    FOI(i, n) {
+        cin >> A[i];
+        if(i == 0)
+            continue;
+        if(A[i] < A[i-1]) {
+            stool += A[i-1] - A[i];
+            A[i] = A[i-1];
+        }
     }
+    cout << stool << endl;
 
     return 0;
 }

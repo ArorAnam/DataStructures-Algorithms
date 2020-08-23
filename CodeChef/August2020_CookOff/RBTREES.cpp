@@ -9,24 +9,26 @@ using namespace std;
 #define FOI2(i,a,n) for(int i=a; i<n; i++)
 #define pii pair<int, int>
 #define ppii pair<int, pii>
-#deine vpii vector<pii>
+#define vpii vector<pii>
 #define MOD (1e9+7)
 
 const int N = 1e5+5;
-int n, m;
-vpii edges(N);
-int fact[N];
 int i, j, k, l;
+int n;
+vvi tree(N, vector<int>(N));
+vi type(N);
 
 void solve() {
     cin >> n;
-    FOR(i, n-1)
-        cin >> edges[i].first >> edges[i].second;
+    int u, v;
+    FOI(i, n-1) {
+        cin >> u >> v;
+        tree[u].push_back(v);
+        tree[v].push_back(u);
+    }
 
-    cin >> m;
-    FOI(i, m)
-        cin >> fact[i];
-
+    FOR(i, n)
+        cin >> type[i];
 
 
 }
@@ -40,6 +42,5 @@ signed main() {
     while(t--) {
         solve();
     }
-
     return 0;
 }

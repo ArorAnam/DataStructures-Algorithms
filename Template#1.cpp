@@ -9,25 +9,14 @@ using namespace std;
 #define FOI2(i,a,n) for(int i=a; i<n; i++)
 #define pii pair<int, int>
 #define ppii pair<int, pii>
-#deine vpii vector<pii>
+#define vpii vector<pii>
 #define MOD (1e9+7)
 
 const int N = 1e5+5;
-int n, m;
-vpii edges(N);
-int fact[N];
 int i, j, k, l;
+int n, m;
 
 void solve() {
-    cin >> n;
-    FOR(i, n-1)
-        cin >> edges[i].first >> edges[i].second;
-
-    cin >> m;
-    FOI(i, m)
-        cin >> fact[i];
-
-
 
 }
 
@@ -40,6 +29,5 @@ signed main() {
     while(t--) {
         solve();
     }
-
     return 0;
 }
