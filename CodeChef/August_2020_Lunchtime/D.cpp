@@ -12,23 +12,15 @@ using namespace std;
 #define vpii vector<pii>
 #define MOD (1e9+7)
 
-const int N = 1e5+5;
-int i, j, k, l;
-int n;
-vi A(N);
+const int N = 2e5+5;
+int i, j, k, l, m;
+int n, d;
+vi C(N);
 
-// take out subsequences of lenght 2L
-// perform left rotations on it
-// such that first L and last L sequences of it are like
-// the smallest value in one half is greater than the largest
-// value in the other half
-// that means smallest L elemets in one half
-// lasrgest L elements in other half
 void solve() {
-    cin >> n;
+    cin >> n >> d;
     FOI(i, n)
-        cin >> A[i];
-
+        cin >> C[i];
 
 }
 

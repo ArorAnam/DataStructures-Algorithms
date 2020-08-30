@@ -14,21 +14,9 @@ using namespace std;
 
 const int N = 1e5+5;
 int i, j, k, l;
-int n;
-vi A(N);
+int n, m;
 
-// take out subsequences of lenght 2L
-// perform left rotations on it
-// such that first L and last L sequences of it are like
-// the smallest value in one half is greater than the largest
-// value in the other half
-// that means smallest L elemets in one half
-// lasrgest L elements in other half
 void solve() {
-    cin >> n;
-    FOI(i, n)
-        cin >> A[i];
-
 
 }
 

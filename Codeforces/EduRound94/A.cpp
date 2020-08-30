@@ -15,26 +15,29 @@ using namespace std;
 const int N = 1e5+5;
 int i, j, k, l;
 int n;
-vi A(N);
+string s;
 
-// take out subsequences of lenght 2L
-// perform left rotations on it
-// such that first L and last L sequences of it are like
-// the smallest value in one half is greater than the largest
-// value in the other half
-// that means smallest L elemets in one half
-// lasrgest L elements in other half
+
+// string w simliar to - s[1..n], s[2..n+1], s[3..n+2]....s[n..2n-1]
 void solve() {
     cin >> n;
-    FOI(i, n)
-        cin >> A[i];
-
-
+    cin >> s;
+    assert(s.length() == 2*n-1);
+    if(s.length() == 1) {
+        cout << s << '\n';
+        return;
+    }
+    else {
+        string res = "";
+        FOI(i, n)
+            res += s[(2*n-1)/2];
+        cout << res << '\n';
+    }
 }
 
 signed main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     int t;
     cin >> t;

@@ -2,6 +2,7 @@
 
 using namespace std;
 
+#define i64 int64_t
 #define int long long
 #define vi vector<int>
 #define vvi vector<vi>
@@ -17,19 +18,30 @@ int i, j, k, l;
 int n;
 vi A(N);
 
-// take out subsequences of lenght 2L
-// perform left rotations on it
-// such that first L and last L sequences of it are like
-// the smallest value in one half is greater than the largest
-// value in the other half
-// that means smallest L elemets in one half
-// lasrgest L elements in other half
 void solve() {
     cin >> n;
-    FOI(i, n)
-        cin >> A[i];
+    assert(n >= 4 && n <= 3000);
+    A.clear();
+    A.resize(n);
+    for(auto &a : A) {
+        cin >> a;
+        a--;
+    }
 
+    vi freq(n*n, 0);
+    i64 total = 0;
 
+    for(k = n-1; k >= 0; k--) {
+        for(l = k + 1; l < n; l++)
+            freq[A[k] * n + A[l]]++;
+
+        int j = k - 1;
+
+        for(int i = 0; i < j; i++)
+            total += freq[A[i] * n + A[j]];
+    }
+
+    cout << total << '\n';
 }
 
 signed main() {
